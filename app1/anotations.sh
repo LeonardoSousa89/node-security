@@ -1,11 +1,16 @@
-# No momento usarei criptografia somente
-# para dados do tipo leitura, dados de ope-
-# rações como calculo ou comparaões não, o
-# dado decifrado é diferente do enviado, 
-# mesmo que os valores sejam iguais,
-# o comparador retornará false, ex:
-# 123 === 123* //false | 123 == 123* //false
-# decifrado*
-#
-# Cors não foi testado
-#
+#https://medium.com/@wesdeveloper/criando-aplica%C3%A7%C3%A3o-nodejs-com-https-ce05b1d2e210
+
+#pkg install openssl-tool
+
+#apelido*
+#openssl req -nodes -new -x509 -keyout server.key* -out server.cert*
+
+
+#ou
+
+
+#https://cloud.ibm.com/docs/ssh-keys?topic=ssh-keys-generating-and-using-ssh-keys-for-remote-host-authentication
+
+#pkg install openssh
+
+#ssh-keygen 

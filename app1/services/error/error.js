@@ -1,14 +1,13 @@
 function exceptionFieldNullOrUndefined(args, error){
-  if(args===null || args===undefined) throw error
+  if(args === null || args === undefined) throw error
 }
 
 function exceptionFieldIsEqualZero(args, error){
-  
-  if(args===0) throw error
+  if(args === 0) throw error
 }
 
 function exceptionFieldIsEmpty(args, error){
-  if(args==='') throw error
+  if(args === '') throw error
 }
 
 function exceptionFieldValueLessToType(args, error){
