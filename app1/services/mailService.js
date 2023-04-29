@@ -232,7 +232,7 @@ async function deleteSendedEmailById(req, res){
                  return res.status(204).json({})
                })
                .catch(_=>res.status(500).json({
-                     msg: 'sorry, ocurred an error with server'
+                     msg: 'sorry, ocurred an error with server'+_
               }))
                
 }
@@ -252,7 +252,7 @@ async function deleteAllSendedEmail(req, res){
                  return res.status(204).json({})
                })
                .catch(_=>res.status(500).json({
-                     msg: 'sorry, ocurred an error with server'
+                     msg: 'sorry, ocurred an error with server'+_
                }))
 }
 
@@ -271,7 +271,7 @@ async function deleteReceivedEmailById(req, res){
                  return res.status(204).json({})
                })
               .catch(_=>res.status(500).json({
-                     msg: 'sorry, ocurred an error with server'
+                     msg: 'sorry, ocurred an error with server'+_
              }))
 }
 
@@ -290,7 +290,7 @@ async function deleteAllReceivedEmail(req, res){
                  return res.status(204).json({})
                })
             .catch(_=>res.status(500).json({
-                     msg: 'sorry, ocurred an error with server'
+                     msg: 'sorry, ocurred an error with server'+_
               }))
 }
 

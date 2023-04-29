@@ -102,12 +102,12 @@ async function login(req, res){
     email: clientAlready.email
   }
 
-  const fiveMinutes=300 
+  const thirtyMinutes=1800 
   
   const token=jwt.sign(
                   { payload },
                     Secret,
-                  { expiresIn: fiveMinutes })
+                  { expiresIn: thirtyMinutes })
   
   return knex_I.where('email', data.email)
                .first()
