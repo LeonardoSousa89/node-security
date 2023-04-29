@@ -1,0 +1,53 @@
+[
+  
+{
+    "name": "Paulo Silveira",
+    "email":"alura@gmail.com",
+    "password":"1234"
+ },
+ {
+    "name": "Fabio Akita",
+    "email":"akitaonrails@gmail.com",
+    "password":"12345678"
+ },
+ {
+    "name": "Leonardo Sousa",
+    "email":"mendesdev89@gmail.com",
+    "password":"1234"
+ },
+ 
+ 
+ {
+  "email":"alura@gmail.com",
+  "password":"1234"
+ },
+ {
+  "email":"akitaonrails@gmail.com",
+  "password":"12345678"
+ },
+ {
+  "email":"mendesdev89@gmail.com",
+  "password":"1234"
+ }
+
+
+ {
+    "mail_destination":"mendesdev89@gmail.com",
+    "topic":"",
+    "mail_msg":"Bom dia, podemos inserir o passport, o que acha?",
+    "sender":"alura@gmail.com"
+ },
+ {
+    "mail_destination":"alura@gmail.com",
+    "topic":"RESPOSTA A EMAIL REFERENTE AO USO DO PASSPORT",
+    "mail_msg":"Boa tarde, rapaz acho uma excelente ideia, porém o bcrypt tá dando vacuo aqui!",
+    "sender":"mendesdev89@gmail.com"
+ },
+ {
+    "mail_destination":"mendesdev89@gmail.com",
+    "topic":"USO DE OUTRA DEPENDENCY",
+    "mail_msg":"Mano boa tarde, podemos utilizar o crypto em função dos problemas apresentados com o bcrypt? no aguardo!",
+    "sender":"akitaonrails@gmail.com"
+ }
+ 
+]
