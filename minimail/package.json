@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "nodemon --exec babel-node index.js",
-    "start": "npx babel-node index.js"
+    "start": "npx babel-node index.js",
+    "server": "pm2 start --interpreter babel-node index.js",
+    "monit":"pm2 monit"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",

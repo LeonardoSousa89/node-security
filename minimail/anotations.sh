@@ -14,3 +14,6 @@
 #pkg install openssh
 
 #ssh-keygen 
+
+#interpretador de babel para pm2
+#https://pm2.keymetrics.io/docs/tutorials/using-transpilers-with-pm2
