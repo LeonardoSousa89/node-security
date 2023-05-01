@@ -5,12 +5,12 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node --watch index.js",
-    "server": "pm2 start index.js",
+    "server": "pm2 start index.js --name minimail",
     "server_monit":"pm2 monit",
     "server_monitor":"pm2 monitor",
     "server_status":"pm2 status",
-    "server_stop":"pm2 stop index.js",
-    "server_delete":"pm2 delete index.js"
+    "server_stop":"pm2 stop minimail",
+    "server_delete":"pm2 delete minimail"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
