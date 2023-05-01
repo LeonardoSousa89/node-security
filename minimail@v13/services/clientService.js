@@ -139,7 +139,7 @@ async function login(req, res){
 
 async function logout(req, res){
   
- res.status(200)
+ res.status(201)
     .json({
       client: null,
       auth: false,
