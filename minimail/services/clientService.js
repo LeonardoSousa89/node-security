@@ -52,7 +52,9 @@ async function signup(req, res){
   const client=await knex_I.insert(data)
                            .from('client')
                            .then(_=>{
-                              res.redirect(201, 'http://127.0.0.1:34568/login')
+                              res.status(201).json({
+                                msg: 'user created'
+                              })
               })
                            .catch(_=>res.status(500).json({
                               msg: 'sorry, ocurred an error with server' 
