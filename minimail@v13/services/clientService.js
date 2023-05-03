@@ -104,7 +104,7 @@ async function login(req, res){
     email: clientAlready.email
   }
 
-  const tenMinutes=60 
+  const tenMinutes=600
   
   const token=jwt.sign(
                   { payload },
