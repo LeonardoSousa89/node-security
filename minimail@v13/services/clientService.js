@@ -104,12 +104,12 @@ async function login(req, res){
     email: clientAlready.email
   }
 
-  const thirtyMinutes=1800 
+  const tenMinutes=60 
   
   const token=jwt.sign(
                   { payload },
                     Secret,
-                  { expiresIn: thirtyMinutes })
+                  { expiresIn: tenMinutes })
   
   return knex_I.where('email', data.email)
                .first()
@@ -149,8 +149,38 @@ async function logout(req, res){
 
 
 
+async function clientById(req, res){
+
+  const client={ ...req.params }  
+
+  return knex_I.where('id', client.id)
+               .first()
+               .table('client')
+               .then(response=>{
+
+                  const data={
+                      id: response.id,
+                      name: response.name,
+                      email: response.email
+                  }
+                  
+                  res.status(200).json({
+                        id: data.id,
+                        name: data.name,
+                        email: data.email
+                  })  
+  })
+    .catch(_=>res.status(500)
+                 .json({
+                  error: 'sorry, ocurred an error with server'
+  }))
+}
+
+
+
 module.exports={
   signup,
   login,
-  logout
+  logout,
+  clientById
 }

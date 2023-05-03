@@ -1,7 +1,8 @@
 const { 
   signup, 
   login, 
-  logout 
+  logout,
+  clientById 
 }=require('../services/clientService')
 
 const {  
@@ -32,6 +33,11 @@ router.route('/login').post(function(req, res) {
 router.route('/signout').post(function(req, res) {
   
   logout(req, res)
+})
+
+router.route('/user/:id').get(authorizedClient, function(req, res) {
+  
+  clientById(req, res)
 })
 
 router.route('/send/user/:id').post(authorizedClient, function(req, res) {
