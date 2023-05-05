@@ -4,11 +4,11 @@ dotenv.config()
 module.exports={
 
   development: {
-    client:     'postgresql',
+    client:     'postgres',
     connection: {
-      database: 'database',
-      user:     'user',
-      password: 'password'
+      database: 'crypto',
+      user:     'postgres',
+      password: '1234'
     },
     pool: {
       min: 2,
