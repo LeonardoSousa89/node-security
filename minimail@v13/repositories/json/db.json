@@ -42,15 +42,15 @@
       "sender":"alura@gmail.com"
    },
    {
-      "mail_destination":"mendesdev89@gmail.com",
-      "topic":"bcrypt",
-      "mail_msg":"Boa noite, cara recuperamos o uso do bcrypt!!!",
-      "sender":"alura@gmail.com"
-   },
-   {
       "mail_destination":"akitaonrails@gmail.com",
       "topic":"bcrypt",
       "mail_msg":"Boa noite, cara que notícia já vou atualizar a stack!!!",
+      "sender":"alura@gmail.com"
+   },
+   {
+      "mail_destination":"mendesdev89@gmail.com",
+      "topic":"bcrypt",
+      "mail_msg":"Boa noite, cara recuperamos o uso do bcrypt!!!",
       "sender":"alura@gmail.com"
    },
 
