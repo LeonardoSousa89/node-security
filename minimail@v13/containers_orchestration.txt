@@ -1,0 +1,56 @@
+# criar a rede docker 
+sudo docker network create --driver=bridge minimail_network --subnet=172.168.0.0/16
+sudo docker network ls
+sudo docker network inspect minimail_network
+
+
+#execução e inspeção dos containers do postgres
+sudo docker run -d --network=minimail_network --ip 172.168.0.2 --name crypto_I -p 5432:5432 -e POSTGRES_PASSWORD=1234 postgres
+sudo docker run -d --network=minimail_network --ip 172.168.0.3 --name crypto_II -p 5433:5432 -e POSTGRES_PASSWORD=1234 postgres
+sudo docker ps
+sudo docker ps -a
+sudo docker inspect crypto_I
+sudo docker inspect crypto_II
+
+
+#parando e inicializando containers do postgres
+sudo docker stop crypto_I
+sudo docker start crypto_I
+sudo docker stop crypto_II
+sudo docker start crypto_II
+
+
+#build e deployment do container da api
+sudo docker build -t leozin89/minimail .
+sudo docker login 
+sudo docker push leozin89/minimail
+
+
+#rodando e inspecionando container docker minimail
+sudo docker run -d -p 34568:34568 --name minimail --network minimail_network --ip 172.168.0.4 leozin89/minimail
+sudo docker logs minimail
+
+
+#excluindo container minimail
+sudo docker rm -f minimail
+
+
+#excluindo imagem minimail
+sudo docker image rm -f leozin89/minimail
+
+
+#rodando container docker em mode compose
+sudo docker-compose up
+
+
+#orquestração com o kubernets
+minikube start --driver=docker
+minikube status
+
+kubectl create deployment minimail --image=leozin89/minimail
+
+minikube dashboard
+minikube dashboard --url
+
+kubectl delete deployment minimail
+minikube stop

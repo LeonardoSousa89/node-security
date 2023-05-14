@@ -159,16 +159,17 @@ async function sendedMail(req, res){
                    
            const data=response.data.map(e=>{
              return {
-               id: e.id,
-               sender: e.sender,
-               mail_destination: e.mail_destination,
-               topic: decipher(e.topic),
-               mail_msg: decipher(e.mail_msg)
+                  id: e.id,
+                  sender: e.sender,
+                  mail_destination: e.mail_destination,
+                  topic: decipher(e.topic),
+                  mail_msg: decipher(e.mail_msg)
                 }
              })
            
           return res.status(200).json({
-                data
+                data,
+                pagination: response.pagination
             })
           }).catch(_=>res.status(500).json({
             msg: 'sorry, ocurred an error with server'
@@ -191,23 +192,24 @@ async function receivedMail(req, res){
               currentPage: req.query.page
             })
       .then(response=>{
-        
+
         if(response.data.length === 0) return res.status(404).json({
               error: 'there is not email in inbox'
               })
                    
            const data=response.data.map(e=>{
              return {
-               id: e._email_id,
-               sender: e.sender,
-               mail_destination: e.mail_destination,
-               topic: decipher(e.topic),
-               mail_msg: decipher(e.mail_msg)
+                  id: e._email_id,
+                  sender: e.sender,
+                  mail_destination: e.mail_destination,
+                  topic: decipher(e.topic),
+                  mail_msg: decipher(e.mail_msg)
                 }
              })
            
           return res.status(200).json({
-                data
+                data,
+                pagination: response.pagination
             })
           }).catch(_=>res.status(500).json({
             msg: 'sorry, ocurred an error with server'
